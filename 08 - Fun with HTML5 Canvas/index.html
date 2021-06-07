@@ -21,7 +21,7 @@
       ctx.strokeStyle = '#BADA55'
       ctx.lineJoin = 'round'
       ctx.lineCap = 'round'
-      ctx.globalCompositeOperation = 'multiply';
+      ctx.globalCompositeOperation = 'multiply'
 
       let isDrawing = false
       let lastX = 0
@@ -35,10 +35,9 @@
         }
 
         ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
-        ctx.lineWidth = 100
         ctx.beginPath()
         ctx.moveTo(lastX, lastY)
-        ctx.lineTo(e.offsetX(), e.offsetY())
+        ctx.lineTo(e.offsetX, e.offsetY)
         ctx.stroke()
         ;[lastX, lastY] = [e.offsetX, e.offsetY]
 
@@ -47,9 +46,10 @@
           hue = 0
         }
 
-        if (ctx.lineWidth >= 100 || ctx.lineWidth < 1) {
+        if (ctx.lineWidth >= 25 || ctx.lineWidth <= 1) {
           direction = !direction
         }
+
         if (direction) {
           ctx.lineWidth++
         } else {
